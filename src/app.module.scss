@@ -1,0 +1,9 @@
+@use './styles/abstracts' as *;
+
+.app {
+  @include container;
+  @include flex-center;
+  flex-direction: column;
+  gap: $spacing-lg;
+  padding-block: $spacing-xl;
+}
