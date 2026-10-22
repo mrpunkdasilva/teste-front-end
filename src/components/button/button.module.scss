@@ -1,0 +1,35 @@
+@use '../../styles/abstracts' as *;
+
+.button {
+  @include flex-center;
+  padding: $spacing-sm $spacing-lg;
+  border: none;
+  border-radius: $radius-md;
+  font-weight: 600;
+  transition:
+    filter 0.2s ease,
+    transform 0.1s ease;
+
+  &:hover {
+    filter: brightness(0.94);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+.primary {
+  background-color: $color-primary;
+  color: #fff;
+}
+
+.secondary {
+  background-color: $color-secondary;
+  color: #fff;
+}
