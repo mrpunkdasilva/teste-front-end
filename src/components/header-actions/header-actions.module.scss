@@ -1,0 +1,13 @@
+@use '../../styles/abstracts' as *;
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-sm;
+
+  @include respond-to(md) {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+  }
+}

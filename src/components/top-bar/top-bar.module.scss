@@ -1,0 +1,31 @@
+@use '../../styles/abstracts' as *;
+
+.topBar {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.benefits {
+  @include container;
+  display: flex;
+  min-height: 28px;
+  align-items: center;
+  justify-content: space-around;
+  gap: $spacing-lg;
+  margin-block: 0;
+  padding-block: 4px;
+  list-style: none;
+
+  @include respond-to(md) {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: $spacing-sm $spacing-lg;
+  }
+
+  @include respond-to(sm) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: stretch;
+    gap: 6px;
+    padding-inline: 12px;
+  }
+}

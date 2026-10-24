@@ -1,0 +1,29 @@
+@use '../../styles/abstracts' as *;
+
+.navigation {
+  @include container;
+  border-top: 1px solid #f1f1f1;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.06);
+}
+
+.items {
+  display: flex;
+  min-height: 36px;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-md;
+  margin: 0;
+  padding: 0 12px;
+  list-style: none;
+
+  @include respond-to(md) {
+    justify-content: flex-start;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

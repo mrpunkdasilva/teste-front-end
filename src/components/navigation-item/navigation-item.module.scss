@@ -1,0 +1,40 @@
+@use '../../styles/abstracts' as *;
+
+.item {
+  flex: 0 0 auto;
+
+  a {
+    display: inline-flex;
+    min-height: 36px;
+    align-items: center;
+    gap: 8px;
+    color: $color-text-muted;
+    font-family: $font-family-base;
+    font-size: 9px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-primary;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-primary;
+      outline-offset: 3px;
+    }
+  }
+
+  img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+  }
+
+  .current {
+    color: $color-primary;
+    font-weight: 700;
+  }
+}

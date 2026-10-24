@@ -8,6 +8,13 @@ const abstractsDir = fileURLToPath(new URL('./src/styles/abstracts', import.meta
   /\\/g,
   '/',
 )
+const productsProxy = {
+  '/api/products': {
+    target: 'https://app.econverse.com.br',
+    changeOrigin: true,
+    rewrite: () => '/teste-front-end/junior/tecnologia/lista-produtos/produtos.json',
+  },
+}
 
 export default defineConfig({
   plugins: [react()],
@@ -22,6 +29,17 @@ export default defineConfig({
         additionalData: `@use "${abstractsDir}" as *;\n`,
       },
     },
+  },
+  server: {
+    proxy: productsProxy,
+    watch: {
+      usePolling: true,
+      interval: 1000,
+      ignored: ['**/node_modules/**', '**/.git/**', '**/.husky/**', '**/tests/**'],
+    },
+  },
+  preview: {
+    proxy: productsProxy,
   },
   test: {
     environment: 'jsdom',

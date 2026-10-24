@@ -1,0 +1,58 @@
+@use '../../styles/abstracts' as *;
+
+.search {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+
+  input {
+    width: 100%;
+    height: 38px;
+    padding: 0 42px 0 14px;
+    border: 0;
+    border-radius: $radius-md;
+    background: $color-surface;
+    color: $color-text;
+    font: 400 12px $font-family-base;
+
+    &::placeholder {
+      color: $color-text-muted;
+      opacity: 1;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 10px;
+    display: grid;
+    width: 24px;
+    height: 24px;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  button img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
